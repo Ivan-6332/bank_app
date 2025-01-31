@@ -6,12 +6,11 @@ import { z } from 'zod'
 import { authFormSchema } from '@/lib/utils'
 
 interface CustomInput {
-    control: Control<z.infer<typeof authFormSchema>>
-    name: FieldPath <z.infer<typeof authFormSchema>>,
-    label:string,
-    placeholder: string
+    control: Control<z.infer<ReturnType<typeof authFormSchema>>>,
+    name: FieldPath<z.infer<ReturnType<typeof authFormSchema>>>,
+    label: string,
+    placeholder: string,
 }
-
 const CustomInput = ({ control, name, label, placeholder }:CustomInput) => {
   return (
         <FormField
