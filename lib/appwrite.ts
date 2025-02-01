@@ -12,7 +12,7 @@ export async function createSessionClient() {
   const session = sessionCookies.get("appwrite-session");
 
   if (!session || !session.value) {
-    throw new Error("No session");
+    throw new Error("No session found. Please ensure you are logged in and cookies are enabled.");
   }
 
   client.setSession(session.value);

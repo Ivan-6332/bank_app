@@ -55,7 +55,8 @@ export async function getLoggedInUser() {
       return parseStringify(user);
       
     } catch (error) {
-      console.error('Error', error);
+      console.error('Failed to retrieve logged-in user:', error);
+      console.error('Ensure that the session is set correctly and the user is logged in.');
       return null;
     }
   }
